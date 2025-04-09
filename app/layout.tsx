@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ryder Bank",
+  title: "Cash Ryder",
   description: "Ryder Bank is a modern banking platform for everyone.",
   icons: {
     icon: '/icons/logo.svg'
