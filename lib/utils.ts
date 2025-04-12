@@ -195,17 +195,38 @@ export const getTransactionStatus = (date: Date) => {
   return date > twoDaysAgo ? "Processing" : "Success";
 };
 
-export const authFormSchema = (type: string) => z.object({
-  // sign up
-  firstName: type === 'sign-in' ? z.string().optional() : z.string().min(3),
-  lastName: type === 'sign-in' ? z.string().optional() : z.string().min(3),
-  address1: type === 'sign-in' ? z.string().optional() : z.string().max(50),
-  city: type === 'sign-in' ? z.string().optional() : z.string().max(50),
-  state: type === 'sign-in' ? z.string().optional() : z.string().min(2).max(2),
-  postalCode: type === 'sign-in' ? z.string().optional() : z.string().min(3).max(6),
-  dateOfBirth: type === 'sign-in' ? z.string().optional() : z.string().min(3),
-  ssn: type === 'sign-in' ? z.string().optional() : z.string().min(3),
-  // both
+
+export const authFormSchema =(type: string) => z.object({
+  
+  // Sign up
+  firstName: type === "sign-in" ? z.string().optional() : z.string().min(3),
+  lastName: type === "sign-in" ? z.string().optional() : z.string().min(3),
+  address1: type === "sign-in" ? z.string().optional() : z.string().max(70),
+  city: type === "sign-in" ? z.string().optional() : z.string().max(50),
+  state: type === "sign-in" ? z.string().optional() : z.string().min(3).max(15),
+  postalCode: type === "sign-in" ? z.string().optional() : z.string().min(3).max(7),
+  dateOfBirth: type === "sign-in" ? z.string().optional() : z.string().min(3),
+  nin: type === "sign-in" ? z.string().optional() : z.string().min(11).max(11),
+  // username: z.string().min(8),
+
+  // both Sign in and Sign up
   email: z.string().email(),
   password: z.string().min(8),
-})
+});
+
+// export const authFormSchema = (type: string) => z.object({
+//   // sign up
+//   firstName: type === 'sign-in' ? z.string().optional() : z.string().min(3),
+//   lastName: type === 'sign-in' ? z.string().optional() : z.string().min(3),
+//   address1: type === 'sign-in' ? z.string().optional() : z.string().max(50),
+//   city: type === 'sign-in' ? z.string().optional() : z.string().max(50),
+//   state: type === 'sign-in' ? z.string().optional() : z.string().min(2).max(2),
+//   postalCode: type === 'sign-in' ? z.string().optional() : z.string().min(3).max(6),
+//   dateOfBirth: type === 'sign-in' ? z.string().optional() : z.string().min(3),
+//   ssn: type === 'sign-in' ? z.string().optional() : z.string().min(3),
+//   // both
+//   email: z.string().email(),
+//   password: z.string().min(8),
+// })
+
+

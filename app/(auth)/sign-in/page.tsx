@@ -1,9 +1,14 @@
-import React from 'react'
+import AuthForm from "@/components/AuthForm";
+import React from "react";
 
 const SignIn = () => {
   return (
-    <div>SignIn</div>
-  )
-}
+    <section className="flex-center size-full max-sm:px-6">
+      <div className="flex flex-row min-h-screen justify-center items-center">
+        <AuthForm type="sign-in" />
+      </div>
+    </section>
+  );
+};
 
-export default SignIn
+export default SignIn;
